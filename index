@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+  <meta charset="UTF-8">
+  <title>Abstract Art Generator</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <div>
+        <h1>Abstract Art Generator</h1>
+    </div>
+    <div class="canvas">
+        <div class ="art-block" id="art-main"></div>
+        <div class ="art-block" id="art-second"></div>
+    </div>
+    <div class="options">
+        <div class="first-block-options">
+            <input type="color" id="color-main" name="color-main" value="#000000" />
+            <label for="color-main">Main Colors</label>
+        </div>
+        <div class="second-block-options">
+            <input type="color" id="color-second" name="color-second" value="#000000" />
+            <label for="color-second">Secondary Color</label>
+        </div>
+
+    </div>
+
+<script>
+
+</script>
+
+</body>
+</html>
