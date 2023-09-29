@@ -13,22 +13,42 @@
         <h1>Abstract Art Generator</h1>
     </div>
     <div class="canvas">
-        <div class ="art-block" id="art-main"></div>
+        <div class ="art-block" id="art-first"></div>
         <div class ="art-block" id="art-second"></div>
     </div>
-    <div class="options">
-        <div class="first-block-options">
-            <input type="color" id="color-main" name="color-main" value="#000000" />
-            <label for="color-main">Main Colors</label>
+    <div class="options-block">
+        <div class="first-block-options options">
+            <input type="color" id="color-first" name="color" value="#000000" />
+            <label for="color-first">Choose color for first block</label>
+            <input type="text" id="size-first" name="size" value="1" />
+            <label for="size-first">How big from 1 to 10 do you want your block?</label>
+            <button class="add-art">Click to add to piece</button>
         </div>
-        <div class="second-block-options">
-            <input type="color" id="color-second" name="color-second" value="#000000" />
-            <label for="color-second">Secondary Color</label>
+        <div class="second-block-options options">
+            <input type="color" id="color-second" name="color" value="#000000" />
+            <label for="color-second">Choose colors for first block</label>
+            <input type="text" id="size-second" name="size" value="1" />
+            <label for="size-second">How big from 1 to 10 do you want your block?</label>
+            <button class="add-art">Click to add to piece</button>
         </div>
 
     </div>
 
 <script>
+    const addArt = document.querySelectorAll('.add-art');
+    const artFirst = document.querySelector('#art-first');
+    const artSecond = document.querySelector('#art-second');
+    const color = document.querySelector('[name="color"]');
+    const width = document.querySelector('[name="size"]');
+
+    function addPiece(div){
+        const newDiv = document.createElement('div');
+        newDiv.style.backgroundColor = color.value;
+        newDiv.style.flex = width.value;
+        div.append(newDiv);
+    };
+
+    addArt.addEventListener('click', addPiece(artFirst));
 
 </script>
 

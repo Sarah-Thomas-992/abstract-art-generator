@@ -1,8 +1,30 @@
-
-
+body {
+    background-color: rgb(216, 202, 184);
+}
 
 .canvas{
     width : 250px; 
     height : 350px;
-    border : 1px solid black;
+    border : 5px solid rgb(110, 86, 59);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.art-block{
+    display: flex;
+    flex-direction: column;
+}
+
+#art-first{
+    flex: 2;
+}
+
+#art-second{
+    flex: 1;
+}
+
+.options {
+    border: 2px solid rgb(110, 86, 59);
+    padding: 20px;
 }
