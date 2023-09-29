@@ -1,72 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
-  <meta charset="UTF-8">
-  <title>Abstract Art Generator</title>
-  <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <title>Abstract Art Generator</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-
     <div>
         <h1>Abstract Art Generator</h1>
     </div>
-    <div class="canvas">
-        <div class ="art-block" id="art-first"></div>
-        <div class ="art-block" id="art-second"></div>
-    </div>
-    <div class="options-block">
-        <div class="first-block-options options">
-            <input type="color" id="color-first" name="color-first" value="#000000" />
-            <label for="color-first">Choose color for first block</label>
-            <input type="text" id="size-first" name="size-first" value="1" />
-            <label for="size-first">How big from 1 to 10 do you want your block?</label>
-            <button id="add-art1" class="add-art">Click to add to piece</button>
+    <div class="content-wrapper">
+        <div class="canvas">
+            <div class="art-block" id="art-first"></div>
+            <div class="art-block" id="art-second"></div>
         </div>
-        <div class="second-block-options options">
-            <input type="color" id="color-second" name="color-second" value="#000000" />
-            <label for="color-second">Choose colors for first block</label>
-            <input type="text" id="size-second" name="size-second" value="1" />
-            <label for="size-second">How big from 1 to 10 do you want your block?</label>
-            <button id="add-art2" class="add-art">Click to add to piece</button>
+        <div class="options-block">
+            <div class="first-block-options options">
+                <label for="color-first">Choose color for first block</label>
+                <input type="color" id="color-first" name="color-first" value="#000000" />
+                <br>
+                <label for="size-first">How big from 1 to 10 do you want your block?</label>
+                <input type="text" id="size-first" name="size-first" value="1" />
+                <br>
+                <button id="add-art1" class="add-art">Click to add to piece</button>
+            </div>
+            <div class="second-block-options options">
+                <label for="color-second">Choose colors for second block</label>
+                <input type="color" id="color-second" name="color-second" value="#000000" />
+                <br>
+                <label for="size-second">How big from 1 to 10 do you want your block?</label>
+                <input type="text" id="size-second" name="size-second" value="1" />
+                <br>
+                <button id="add-art2" class="add-art">Click to add to piece</button>
+            </div>
         </div>
-
     </div>
 
-<script>
-    const addArtFirst = document.querySelector('#add-art1');
-    const addArtSecond = document.querySelector('#add-art2');
-    const artFirst = document.querySelector('#art-first');
-    const artSecond = document.querySelector('#art-second');
-    const colorOne = document.querySelector('[name="color-first"]');
-    const colorTwo = document.querySelector('[name="color-second"]');
-    const sizeOne = document.querySelector('[name="size-first"]');
-    const sizeTwo = document.querySelector('[name="size-second"]');
+    <script>
+        const addArtFirst = document.querySelector('#add-art1');
+        const addArtSecond = document.querySelector('#add-art2');
+        const artFirst = document.querySelector('#art-first');
+        const artSecond = document.querySelector('#art-second');
+        const colorOne = document.querySelector('[name="color-first"]');
+        const colorTwo = document.querySelector('[name="color-second"]');
+        const sizeOne = document.querySelector('[name="size-first"]');
+        const sizeTwo = document.querySelector('[name="size-second"]');
 
-    function addPieceOne(){
-        const newDiv = document.createElement('div');
-        newDiv.style.backgroundColor = colorOne.value;
-        newDiv.style.flex = sizeOne.value;
-        artFirst.append(newDiv);
-    };
+        function addPieceOne() {
+            const newDiv = document.createElement('div');
+            newDiv.style.backgroundColor = colorOne.value;
+            newDiv.style.flex = sizeOne.value;
+            artFirst.append(newDiv);
+        };
 
-    function addPieceTwo(){
-        const newDiv = document.createElement('div');
-        newDiv.style.backgroundColor = colorTwo.value;
-        newDiv.style.flex = sizeTwo.value;
-        artSecond.append(newDiv);
-    };
+        function addPieceTwo() {
+            const newDiv = document.createElement('div');
+            newDiv.style.backgroundColor = colorTwo.value;
+            newDiv.style.flex = sizeTwo.value;
+            artSecond.append(newDiv);
+        };
 
-    addArtFirst.addEventListener('click', () => {
-        addPieceOne();
-    });
+        addArtFirst.addEventListener('click', () => {
+            addPieceOne();
+        });
 
-    addArtSecond.addEventListener('click', () => {
-        addPieceTwo();
-    });
+        addArtSecond.addEventListener('click', () => {
+            addPieceTwo();
+        });
 
-</script>
+    </script>
 
 </body>
+
 </html>
