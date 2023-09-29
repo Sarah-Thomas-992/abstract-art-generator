@@ -18,37 +18,53 @@
     </div>
     <div class="options-block">
         <div class="first-block-options options">
-            <input type="color" id="color-first" name="color" value="#000000" />
+            <input type="color" id="color-first" name="color-first" value="#000000" />
             <label for="color-first">Choose color for first block</label>
-            <input type="text" id="size-first" name="size" value="1" />
+            <input type="text" id="size-first" name="size-first" value="1" />
             <label for="size-first">How big from 1 to 10 do you want your block?</label>
-            <button class="add-art">Click to add to piece</button>
+            <button id="add-art1" class="add-art">Click to add to piece</button>
         </div>
         <div class="second-block-options options">
-            <input type="color" id="color-second" name="color" value="#000000" />
+            <input type="color" id="color-second" name="color-second" value="#000000" />
             <label for="color-second">Choose colors for first block</label>
-            <input type="text" id="size-second" name="size" value="1" />
+            <input type="text" id="size-second" name="size-second" value="1" />
             <label for="size-second">How big from 1 to 10 do you want your block?</label>
-            <button class="add-art">Click to add to piece</button>
+            <button id="add-art2" class="add-art">Click to add to piece</button>
         </div>
 
     </div>
 
 <script>
-    const addArt = document.querySelectorAll('.add-art');
+    const addArtFirst = document.querySelector('#add-art1');
+    const addArtSecond = document.querySelector('#add-art2');
     const artFirst = document.querySelector('#art-first');
     const artSecond = document.querySelector('#art-second');
-    const color = document.querySelector('[name="color"]');
-    const width = document.querySelector('[name="size"]');
+    const colorOne = document.querySelector('[name="color-first"]');
+    const colorTwo = document.querySelector('[name="color-second"]');
+    const sizeOne = document.querySelector('[name="size-first"]');
+    const sizeTwo = document.querySelector('[name="size-second"]');
 
-    function addPiece(div){
+    function addPieceOne(){
         const newDiv = document.createElement('div');
-        newDiv.style.backgroundColor = color.value;
-        newDiv.style.flex = width.value;
-        div.append(newDiv);
+        newDiv.style.backgroundColor = colorOne.value;
+        newDiv.style.flex = sizeOne.value;
+        artFirst.append(newDiv);
     };
 
-    addArt.addEventListener('click', addPiece(artFirst));
+    function addPieceTwo(){
+        const newDiv = document.createElement('div');
+        newDiv.style.backgroundColor = colorTwo.value;
+        newDiv.style.flex = sizeTwo.value;
+        artSecond.append(newDiv);
+    };
+
+    addArtFirst.addEventListener('click', () => {
+        addPieceOne();
+    });
+
+    addArtSecond.addEventListener('click', () => {
+        addPieceTwo();
+    });
 
 </script>
 
